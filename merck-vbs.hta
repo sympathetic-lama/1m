@@ -1,0 +1,32 @@
+<html>
+<head>
+  <HTA:APPLICATION 
+    APPLICATIONNAME="DummyApp"
+    SCROLL="no"
+    SINGLEINSTANCE="yes"
+    WINDOWSTATE="minimize"
+  >
+  <title>Auto HTA</title>
+</head>
+
+<script language="VBScript">
+  Sub Window_OnLoad
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    
+    ' Create tmp directory if it doesn't exist
+    If Not fso.FolderExists("C:\tmp") Then
+      fso.CreateFolder("C:\tmp")
+    End If
+    
+    Set file = fso.CreateTextFile("C:\tmp\output.txt", True)
+    file.WriteLine("HTA wrote this file")
+    file.Close
+    
+    ' Close the HTA window
+    window.close
+  End Sub
+</script>
+
+<body>
+</body>
+</html>
